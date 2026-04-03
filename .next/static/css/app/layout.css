@@ -1,0 +1,83 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./app/globals.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+/* app/globals.css */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+button:focus { outline: none; }
+button { font-family: inherit; }
+input  { font-family: inherit; }
+
+/* ── Animations ─────────────────────────────────── */
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.06); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-8px); }
+  75%       { transform: translateX(8px); }
+}
+@keyframes popIn {
+  0%   { transform: translate(-50%, -50%) scale(0.4); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; }
+  50%       { opacity: 0.6; }
+}
+
+/* ── Utilities ──────────────────────────────────── */
+.slide-in  { animation: slideIn 0.4s ease; }
+.fade-in   { animation: fadeIn  0.3s ease; }
+.float-up  { animation: floatUp 2s ease-in-out infinite; }
+
+/* ── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #f0f0ff; }
+::-webkit-scrollbar-thumb { background: #667eea; border-radius: 10px; }
+
+/* ── Print (ورقة العمل) ─────────────────────────── */
+@media print {
+  /* إخفاء كل شيء */
+  body * { visibility: hidden; }
+  
+  /* إظهار ورقة العمل فقط */
+  #ws-print, #ws-print * { visibility: visible; }
+  
+  #ws-print {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: white !important;
+  }
+}
+
